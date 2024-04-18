@@ -3,9 +3,10 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from '@react-navigation/stack';
-import BottomNavigation from './BottomNavigation';
+import BottomNavigation, {BottomStackParamList} from './BottomNavigation';
 import {
   NavigationContainer,
+  NavigatorScreenParams,
   ParamListBase,
   RouteProp,
 } from '@react-navigation/native';
@@ -29,7 +30,7 @@ export const MainNavigator = () => {
 };
 
 export type RootStackParamList = {
-  BOTTOM_NAV: undefined;
+  BOTTOM_NAV: NavigatorScreenParams<BottomStackParamList>;
   VEHICLE_DETAILS: {details: VehicleType};
 };
 

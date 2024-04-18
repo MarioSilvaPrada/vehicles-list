@@ -6,7 +6,12 @@ import {Favorites} from '../screens/Favorites';
 import {CarIcon} from '../assets/svg/car';
 import {HeartIcon} from '../assets/svg/heart';
 
-const Tab = createBottomTabNavigator();
+export type BottomStackParamList = {
+  VEHICLES: undefined;
+  FAVORITES: undefined;
+};
+
+const Tab = createBottomTabNavigator<BottomStackParamList>();
 
 const BottomNavigation = () => {
   return (
@@ -15,14 +20,14 @@ const BottomNavigation = () => {
         headerShown: false,
       }}>
       <Tab.Screen
-        name="Vehicles"
+        name="VEHICLES"
         component={VehiclesList}
         options={{
           tabBarIcon: ({color}) => <CarIcon color={color} />,
         }}
       />
       <Tab.Screen
-        name="Favorites"
+        name="FAVORITES"
         component={Favorites}
         options={{
           tabBarIcon: ({color}) => <HeartIcon color={color} />,

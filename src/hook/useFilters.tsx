@@ -9,7 +9,6 @@ export const useFilter = () => {
   const [makeOptions, setMakeOptions] = useState<string[]>([]);
   const [modelOptions, setModelOptions] = useState<string[]>([]);
   const {setCurrentFilter, filter, resetFilters} = useVehicleContext();
-  console.log({filter: filter.startingBid});
   const DeleteAllFilters = Object.values(filter).some(item => item) ? (
     <TouchableOpacity onPress={resetFilters} style={styles.deleteFilterBtn}>
       <Text style={styles.deleteText}>Delete all filters</Text>
