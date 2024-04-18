@@ -72,7 +72,9 @@ export const VehiclesList = () => {
             return item.startingBid > (filter.startingBid as number);
           })}
         keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => <VehicleCard vehicle={item} />}
+        renderItem={({item, index}) => (
+          <VehicleCard vehicle={item} index={index} />
+        )}
         contentContainerStyle={styles.container}
         onScroll={e => {
           if (e.nativeEvent.contentOffset.y > 100) {

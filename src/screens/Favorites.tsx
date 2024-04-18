@@ -13,7 +13,9 @@ export const Favorites = () => {
       <FlatList
         data={favorites}
         keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => <VehicleCard vehicle={item} />}
+        renderItem={({item, index}) => (
+          <VehicleCard vehicle={item} index={index} />
+        )}
         contentContainerStyle={styles.container}
       />
     </Layout>
